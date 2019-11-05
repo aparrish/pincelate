@@ -1,0 +1,48 @@
+
+phone_feature_map = {
+    'M': ('blb', 'nas'),
+    'P': ('vls', 'blb', 'stp'),
+    'B': ('vcd', 'blb', 'stp'),
+    'F': ('vls', 'lbd', 'frc'),
+    'V': ('vcd', 'lbd', 'frc'),
+    'TH': ('vls', 'dnt', 'frc'),
+    'DH': ('vcd', 'dnt', 'frc'),
+    'N': ('alv', 'nas'),
+    'T': ('vls', 'alv', 'stp'),
+    'D': ('vcd', 'alv', 'stp'),
+    'S': ('vls', 'alv', 'frc'),
+    'Z': ('vcd', 'alv', 'frc'),
+    'R': ('alv', 'apr'),
+    'L': ('alv', 'lat'),
+    'SH': ('vls', 'pla', 'frc'),
+    'ZH': ('vcd', 'pla', 'frc'),
+    'Y': ('pal', 'apr'),
+    'NG': ('vel', 'nas'),
+    'K': ('vls', 'vel', 'stp'),
+    'G': ('vcd', 'vel', 'stp'),
+    'W': ('lbv', 'apr'),
+    'HH': ('glt', 'apr'),
+    'CH': ('vls', 'alv', 'stp', 'frc'),
+    'JH': ('vcd', 'alv', 'stp', 'frc'),
+    'AO': ('lmd', 'bck', 'rnd', 'vwl'),
+    'AA': ('low', 'bck', 'unr', 'vwl'),
+    'IY': ('hgh', 'fnt', 'unr', 'vwl'),
+    'UW': ('hgh', 'bck', 'rnd', 'vwl'),
+    'EH': ('lmd', 'fnt', 'unr', 'vwl'),
+    'IH': ('smh', 'fnt', 'unr', 'vwl'),
+    'UH': ('smh', 'bck', 'rnd', 'vwl'),
+    'AH': ('mid', 'cnt', 'unr', 'vwl'),
+    'AE': ('low', 'fnt', 'unr', 'vwl'),
+    'EY': ('lmd', 'smh', 'fnt', 'unr', 'vwl'),
+    'AY': ('low', 'smh', 'fnt', 'cnt', 'unr', 'vwl'),
+    'OW': ('umd', 'smh', 'bck', 'rnd', 'vwl'),
+    'AW': ('low', 'smh', 'bck', 'cnt', 'unr', 'rnd', 'vwl'),
+    'OY': ('lmd', 'smh', 'bck', 'fnt', 'rnd', 'unr', 'vwl'),
+    'ER': ('umd', 'cnt', 'rzd', 'vwl'),
+    '^': ('beg',),
+    '$': ('end',)
+}
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
