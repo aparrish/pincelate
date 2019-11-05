@@ -24,16 +24,25 @@ Pronunciations are specified and returned in a phonetic alphabet called
 `CMU Pronouncing Dictionary <http://www.speech.cs.cmu.edu/cgi-bin/cmudict>`_.
 (Note that this module does not itself perform text-to-speech!)
 
+`The source code for the project is hosted on GitHub.
+<https://github.com/aparrish/pincelate>`_
+
+
 Installation
 ------------
 
-First, `install Tensorflow <https://www.tensorflow.org/install>`_. (Tensorflow
-isn't included in the package dependencies because you need to choose either
-the GPU or CPU version.) After that, install with ``pip``::
+You'll need to `install Tensorflow <https://www.tensorflow.org/install>`_
+first.  (Tensorflow isn't included in the package dependencies because you need
+to choose either the GPU or CPU version.) After that, install with ``pip``::
 
     pip install pincelate
 
 This will install the code and the pre-trained model.
+
+Pincelate requires *Python 3.6* or later. (It might work on other versions, but
+I haven't tested it.) As of this writing, Python 3.8 is not yet supported
+(because of incompatibilities in some of the required libraries).
+
 
 Documentation
 -------------
@@ -42,11 +51,12 @@ In addition to the documentation provided below, see `this Jupyter Notebook
 <TK>`_ with a tutorial and cookbook.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    pincelate
    training
+   changelog
 
 
 About
@@ -131,3 +141,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+

@@ -15,5 +15,6 @@ A quick example:
     >>> pin.spell(["HH", "EH", "L", "OW"])
     'hello'
 
-Please see [the documentation](TK) for more information!
+Please see [the documentation](https://pincelate.readthedocs.io/en/latest/) for
+more information!
 
