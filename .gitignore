@@ -44,3 +44,6 @@ docs/_build
 
 # virtualenvs
 env3
+
+# project specific stuff
+tests/testmodel*
