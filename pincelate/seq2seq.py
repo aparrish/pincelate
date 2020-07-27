@@ -1,9 +1,9 @@
 from types import SimpleNamespace
 
-from keras.models import Model
-from keras.layers import Input, GRU, Dense, Masking, Concatenate, \
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Input, GRU, Dense, Masking, Concatenate, \
     Bidirectional
-from keras import optimizers
+from tensorflow.keras import optimizers
 import numpy as np
 
 
@@ -53,7 +53,8 @@ class Seq2Seq:
                     GRU(
                         self.hps.enc_rnn_units,
                         recurrent_dropout=self.hps.enc_rnn_dropout,
-                        return_state=True),
+                        return_state=True,
+                        reset_after=False),
                     name='training_encoder_bidi')
             # Bidirectional wrapper returns both forward and backward state
             (_,
@@ -67,6 +68,7 @@ class Seq2Seq:
                     self.hps.enc_rnn_units,
                     recurrent_dropout=self.hps.enc_rnn_dropout,
                     return_state=True,
+                    reset_after=False,
                     name='training_encoder')
             _, training_encoder_state = training_encoder(training_encoder_mask)
 
@@ -94,6 +96,7 @@ class Seq2Seq:
                 recurrent_dropout=self.hps.dec_rnn_dropout,
                 return_sequences=True,
                 return_state=True,
+                reset_after=False,
                 name='training_decoder')
         training_decoder_outputs, _ = training_decoder_rnn(
             training_decoder_in,
@@ -176,17 +179,15 @@ class Seq2Seq:
     @classmethod
     def load_from_package(cls, prefix):
         from pkg_resources import resource_stream as rs
+        from pkg_resources import resource_filename as rf
         import pickle
         with rs(__name__, prefix + "-obj.pickle") as fh:
             obj_data = pickle.load(fh)
         obj = cls(**obj_data)
         obj.make_models()
-        with rs(__name__, prefix + "-training.h5") as fh:
-            obj.training_model.load_weights(fh)
-        with rs(__name__, prefix + "-infer-encoder.h5") as fh:
-            obj.infer_encoder_model.load_weights(fh)
-        with rs(__name__, prefix + "-infer-decoder.h5") as fh:
-            obj.infer_decoder_model.load_weights(fh)
+        obj.training_model.load_weights(rf(__name__, prefix + "-training.h5"))
+        obj.infer_encoder_model.load_weights(rf(__name__, prefix + "-infer-encoder.h5"))
+        obj.infer_decoder_model.load_weights(rf(__name__, prefix + "-infer-decoder.h5"))
         return obj
 
     def save_model_weights(self, prefix):

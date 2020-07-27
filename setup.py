@@ -9,14 +9,14 @@ with open('README.md') as readme_file:
     readme = readme_file.read()
 
 requirements = [
-    'Keras>=2.2.0',
+    'tensorflow>=2.0.0',
     'pronouncing>=0.2.0',
     'scikit-learn>=0.20.0'
 ]
 
 setup(
     name='pincelate',
-    version='0.0.1',
+    version='0.0.2',
     description="Easy to use ML model for spelling and sounding out words",
     long_description=readme,
     long_description_content_type='text/markdown',
