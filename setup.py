@@ -9,7 +9,7 @@ with open('README.md') as readme_file:
     readme = readme_file.read()
 
 requirements = [
-    'Keras>=2.2.0',
+    'Keras==2.2.5',
     'pronouncing>=0.2.0',
     'scikit-learn>=0.20.0'
 ]

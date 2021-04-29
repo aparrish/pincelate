@@ -31,9 +31,17 @@ Pronunciations are specified and returned in a phonetic alphabet called
 Installation
 ------------
 
-You'll need to `install Tensorflow <https://www.tensorflow.org/install>`_
-first.  (Tensorflow isn't included in the package dependencies because you need
-to choose either the GPU or CPU version.) After that, install with ``pip``::
+Machine learning moves fast and breaks things, including backwards
+compatibility with models like this. So installation is a bit tricky. You'll
+need to install *particular versions* of Tensorflow and Keras to get Pincelate
+to work. (For this reason, I highly recommend installing Pincelate in a virtual
+environment or conda environment.)
+
+This should do the trick:
+
+    pip install tensorflow==1.15.0 keras==2.2.5 "h5py<3.0.0"
+
+After you've done this, you can install Pincelate:
 
     pip install pincelate
 
